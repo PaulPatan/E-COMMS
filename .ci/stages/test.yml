@@ -1,0 +1,17 @@
+include:
+  - /.ci/rules.yml
+  - /.ci/templates.yml
+
+# * Make tests interruptible
+.test-common:
+  stage: test
+  extends:
+    - .base
+    - .rules-mr-only
+  interruptible: true
+
+Unit test:
+  extends:
+    - .test-common
+  script:
+    - npm run test:ci

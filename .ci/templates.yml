@@ -1,0 +1,4 @@
+.base:
+  image: node:lts-hydrogen # We pull from node v18
+  script:
+    - npm ci # running clean install forces npm to check package-lock and not download extra dependencies, essentially this ensures that dependencies downloaded are always correct and operations are read-only (see https://docs.npmjs.com/cli/v9/commands/npm-ci)

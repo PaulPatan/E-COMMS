@@ -1,0 +1,19 @@
+{
+  "name": "@e-comms/core",
+  "version": "0.0.1",
+  "description": "E-Commerce application backend",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "echo 'Starting core backend...'",
+    "test": "jest --passWithNoTests"
+  },
+  "keywords": [
+    "e-commerce",
+    "api",
+    "oauth",
+    "shop"
+  ],
+  "author": "Crimson Crusaders",
+  "license": "ISC"
+}

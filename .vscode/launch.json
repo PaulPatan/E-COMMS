@@ -1,0 +1,62 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Core",
+      "request": "launch",
+      "runtimeArgs": ["run", "start", "-w", "./apps/core"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "restart": true,
+      "killBehavior": "forceful",
+      "localRoot": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/apps/core/.env",
+      "type": "node"
+    },
+    {
+      "name": "Run LB",
+      "request": "launch",
+      "runtimeArgs": ["run", "start", "-w", "./apps/lb"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "restart": true,
+      "killBehavior": "forceful",
+      "localRoot": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/apps/lb/.env",
+      "type": "node"
+    },
+    {
+      "name": "Run Resource",
+      "request": "launch",
+      "runtimeArgs": ["run", "start", "-w", "./apps/resource"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "outputCapture": "std",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "restart": true,
+      "killBehavior": "forceful",
+      "localRoot": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/apps/resource/.env",
+      "type": "node"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run All",
+      "configurations": ["Run Core", "Run LB", "Run Resource"]
+    }
+  ]
+}

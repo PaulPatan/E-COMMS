@@ -1,0 +1,21 @@
+include:
+  - /.ci/rules.yml
+  - /.ci/templates.yml
+
+# Templates
+.install-common:
+  stage: prepare
+  after_script: echo 'NPM installing dependencies'
+  extends: .base
+  artifacts: # We cache node_modules after npm CI is ran
+    expire_in: 1 hour
+    when: on_success
+    paths:
+      - node_modules/
+
+# MR only
+Install (MR):
+  extends:
+    - .install-common
+    - .rules-mr-only
+  interruptible: true

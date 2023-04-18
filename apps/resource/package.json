@@ -1,0 +1,17 @@
+{
+  "name": "@e-comms/resource",
+  "version": "0.0.1",
+  "description": "API storage for E-Commerce application assets such as images",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "echo 'Starting resource backend...'",
+    "test": "jest --passWithNoTests"
+  },
+  "keywords": [
+    "resource",
+    "store"
+  ],
+  "author": "Crimson Crusaders",
+  "license": "ISC"
+}
