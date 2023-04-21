@@ -15,3 +15,9 @@ Unit test:
     - .test-common
   script:
     - npm run test:ci
+
+Lint test:
+  extends:
+    - .test-common
+  script:
+    - npm run lint:ci

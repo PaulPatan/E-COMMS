@@ -6,7 +6,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "echo 'Starting lb backend...'",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "lint": "eslint ./src/**/*.ts" 
   },
   "keywords": [
     "lb",
