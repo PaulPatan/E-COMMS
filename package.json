@@ -20,5 +20,10 @@
   "workspaces": [
     "packages/*",
     "apps/*"
-  ]
+  ],
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
 }
