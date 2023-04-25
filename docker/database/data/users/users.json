@@ -1,0 +1,27 @@
+[
+    {
+      "name": "John",
+      "email": "example@example.com",
+      "avatar": "https://placekitten.com/300/300"
+    },
+    {
+      "name": "Joanne",
+      "email": "example@example.com",
+      "avatar": "https://placekitten.com/300/300"
+    },
+    {
+      "name": "Bob",
+      "email": "example@example.com",
+      "avatar": "https://placekitten.com/300/300"
+    },
+    {
+      "name": "Will",
+      "email": "example@example.com",
+      "avatar": "https://placekitten.com/300/300"
+    },
+    {
+      "name": "Chris",
+      "email": "example@example.com",
+      "avatar": "https://placekitten.com/300/300"
+    }
+  ]

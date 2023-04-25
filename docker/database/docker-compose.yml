@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  mongodb_container:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${PASSWORD}
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb_data_container:/data/db
+      - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+  mongodb_seed:
+    image: pkosiec/mongo-seeding:latest
+    container_name: mongodb-seed
+    environment:
+      DB_URI: mongodb://${USER}:${PASSWORD}@mongodb/e-comms
+      DROP_DATABASE: true
+    volumes:
+      - ./data:/data
+
+
+volumes:
+  mongodb_data_container:
