@@ -20,7 +20,8 @@ if (!fs.existsSync(AVATAR_PATH)) {
 }
 
 app.use('/resource/api', router);
+const port = process.env.PORT || 3000;
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is listening on: http://localhost:${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Server is listening on: http://localhost:${port}`);
 });
