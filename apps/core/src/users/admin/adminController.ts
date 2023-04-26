@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { BodyType } from "../../types";
-import {APIError} from '@e-comms/shared/errors';
+import { APIError } from '@e-comms/shared/errors';
 // import { APIError } from '@shared/errors';
 
 

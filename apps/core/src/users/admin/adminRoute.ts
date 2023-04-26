@@ -1,14 +1,23 @@
-import { Request, Response, NextFunction } from 'express';
 import * as adminController from './adminController';
 import { MiddlewareFunction } from '../../types';
+import { authMiddleware } from '../middleware/auth.middleware';
+import { z } from 'zod';
+import { roleMiddleware } from '../middleware/authorization.middleware';
+import { validateSchema } from '../middleware/validateSchema';
+
+const body = z.object({
+    name: z.string(),
+    email: z.string()
+});
 
 
+
+//example of a route using all the middleware
 const getAdminRoute = {
     route: '/admin',
     method: 'GET' as const,
-    middleware: [((req: Request, res: Response, next: NextFunction) => {
-        next();
-    }) as MiddlewareFunction],
+    role: 'admin' as const,
+    middleware: [roleMiddleware('admin'), authMiddleware(), validateSchema(body)] as MiddlewareFunction[],
     controller: adminController.getAdmin
 }
 
@@ -16,9 +25,7 @@ const getAdminRoute = {
 const postAdminRoute = {
     route: '/admin',
     method: 'POST' as const,
-    middleware: [((req: Request, res: Response, next: NextFunction) => {
-        next();
-    }) as MiddlewareFunction],
+    middleware: [] as MiddlewareFunction[],
     controller: adminController.postAdmin
 }
 

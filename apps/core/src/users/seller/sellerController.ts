@@ -7,6 +7,6 @@ export function getSeller() {
 }
 
 export function postSeller(req: Request) {
-    const { name, email }= req.body as BodyType;
+    const { name, email } = req.body as BodyType;
     return ({ 'seller': { name, email } });
 }

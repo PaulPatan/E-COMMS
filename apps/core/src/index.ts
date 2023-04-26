@@ -18,7 +18,7 @@ type HttpMethod = `${Lowercase<Route['method']>}`;
 
 const app = express();
 const router = AsyncRouter({
-    sender: (req:Request, res:Response, value:string) => {
+    sender: (req: Request, res: Response, value: string) => {
         res.send(value ?? { success: true });
     }
 });

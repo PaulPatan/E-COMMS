@@ -2,13 +2,12 @@ import { Request, Response, NextFunction } from 'express';
 
 import * as buyerController from './buyerController';
 import { MiddlewareFunction } from '../../types';
+import { authMiddleware } from '../middleware/auth.middleware';
 
 const getBuyerRoute = {
     route: '/buyer',
     method: 'GET' as const,
-    middleware: [((req: Request, res: Response, next: NextFunction) => {
-        next();
-    }) as MiddlewareFunction],
+    middleware: [authMiddleware()],
     controller: buyerController.getBuyer
 }
 
