@@ -1,5 +1,5 @@
 import { APIError } from '@e-comms/shared/errors';
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 
 export const validateSchema = (schema: z.ZodObject<any, any>, options?: boolean) => (

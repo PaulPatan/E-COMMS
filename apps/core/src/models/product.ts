@@ -1,4 +1,4 @@
-import { Schema, model, connect, Types } from 'mongoose';
+import { model, Schema, Types } from "mongoose";
 export type TProduct = {
     id: Types.ObjectId;
     sellerId: Types.ObjectId;
@@ -10,10 +10,10 @@ export type TProduct = {
     image: string[]; //path
     recommended: boolean;
     reviews: string[];
-}
+};
 
 const productSchema = new Schema<TProduct>({
-    sellerId: { type: Schema.Types.ObjectId, ref: 'users', required:true },
+    sellerId: { type: Schema.Types.ObjectId, ref: "users", required: true },
     name: { type: String },
     price: { type: Number },
     quantity: { type: Number },
@@ -21,7 +21,7 @@ const productSchema = new Schema<TProduct>({
     discountPercentage: { type: Number },
     image: { type: [String] }, //path
     recommended: { type: Boolean },
-    reviews: { type: [String] }
-})
+    reviews: { type: [String] },
+});
 
-export const Product = model<TProduct>('Product', productSchema);
+export const Product = model<TProduct>("Product", productSchema);

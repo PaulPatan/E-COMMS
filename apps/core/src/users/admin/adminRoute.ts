@@ -25,7 +25,7 @@ const getAdminRoute = {
 const postAdminRoute = {
     route: '/admin',
     method: 'POST' as const,
-    middleware: [] as MiddlewareFunction[],
+    middleware: [validateSchema(body)] as MiddlewareFunction[],
     controller: adminController.postAdmin
 }
 

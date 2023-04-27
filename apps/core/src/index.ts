@@ -4,6 +4,7 @@ import { sellersRoutes } from './users/seller/sellerRoute';
 import { buyerRoutes } from './users/buyer/buyerRoute';
 import { MiddlewareFunction } from './types';
 import { AsyncRouter } from 'express-async-router';
+import { APIError } from '@e-comms/shared/errors';
 
 
 type Route = {
@@ -17,6 +18,7 @@ type HttpMethod = `${Lowercase<Route['method']>}`;
 
 
 const app = express();
+app.use(express.json());
 const router = AsyncRouter({
     sender: (req: Request, res: Response, value: string) => {
         res.send(value ?? { success: true });
@@ -61,12 +63,16 @@ const buildAPIRoutes = (getRoutes: () => Route[]) => {
 
 const ROUTES = buildAPIRoutes(getRoutes);
 
-ROUTES.use((err: any, req: Request, res: Response, next: NextFunction) => {
-    const { errCode, msg } = err as { errCode: number, msg: string };
-    res.status(errCode).send({ msg });
-});
-
 app.use(ROUTES);
+
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    if (err instanceof APIError) {
+        const { errorCode, data } = err;
+        res.status(errorCode).send({ message: data });
+        return;
+    }
+    console.log('Catastrophic error happened!', err);
+});
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
