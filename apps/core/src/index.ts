@@ -1,22 +1,39 @@
 import express, { Request, Response, NextFunction } from 'express';
 import { adminRoutes } from './users/admin/adminRoute';
+import { Route } from './types';
+import { AsyncRouter } from 'express-async-router';
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express";
+import { authMiddleware } from './users/middleware/auth.middleware';
+import { roleMiddleware } from './users/middleware/authorization.middleware';
+import { validateSchema } from './users/middleware/validateSchema';
 import { sellersRoutes } from './users/seller/sellerRoute';
 import { buyerRoutes } from './users/buyer/buyerRoute';
-import { MiddlewareFunction } from './types';
-import { AsyncRouter } from 'express-async-router';
 import { APIError } from '@e-comms/shared/errors';
 
 
-type Route = {
-    route: string;
-    method: 'GET' | 'POST' | 'PUT' | 'DELETE';
-    middleware: MiddlewareFunction[];
-    controller: (req: Request, res: Response) => void;
-}
-
 type HttpMethod = `${Lowercase<Route['method']>}`;
 
+const port = process.env.PORT || 3001;
+const options = {
+    definition: {
+        openapi: '3.0.0',
+        info: {
+            title: 'Crimson Crusaders API Documentation',
+            version: '1.0.0',
+            description: 'Create, Read, Update and Delete operations on the API',
+        },
+        servers: [
+            {
+                url: `http://localhost:${port}`,
+                description: 'Local server',
+            },
+        ],
+    },
+    apis: ['./src/**/*Controller.ts'],
+};
 
+const specs = swaggerJSDoc(options);
 const app = express();
 app.use(express.json());
 const router = AsyncRouter({
@@ -46,9 +63,13 @@ const buildAPIRoutes = (getRoutes: () => Route[]) => {
         // * this check ensures that if route.middleware is undefined middlewareToCall becomes [] instead
         const middlewareToCall = route.middleware ?? [];
 
-        // const auth = auth ?  auth : '';
-
         const routeName = route.route
+
+        if (route.auth) middlewareToCall.push(authMiddleware());
+
+        if (route.role) middlewareToCall.push(roleMiddleware(route.role));
+
+        if (route.body) middlewareToCall.push(validateSchema(route.body));
 
         // * We call router[httpMethod] which for httpMethod = 'get' is equivalent to router.get
         // * We then destructure the array of middlewareToCall, meaning that the function receives each param one by one so it becomes
@@ -63,6 +84,11 @@ const buildAPIRoutes = (getRoutes: () => Route[]) => {
 
 const ROUTES = buildAPIRoutes(getRoutes);
 
+//to serve the swagger ui copy link http://localhost:${port}/api-docs
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs, {
+    explorer: true
+}));
+
 app.use(ROUTES);
 
 app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
@@ -73,8 +99,6 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     }
     console.log('Catastrophic error happened!', err);
 });
-
-const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });

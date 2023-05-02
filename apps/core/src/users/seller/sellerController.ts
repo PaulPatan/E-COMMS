@@ -1,6 +1,5 @@
-import { Request, Response } from "express";
 import { BodyType } from "../../types";
-
+import { Request } from 'express';
 
 export function getSeller() {
     return 'Hello from Seller';

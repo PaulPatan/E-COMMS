@@ -50,3 +50,5 @@ packages/*/build
 
 apps/**/avatars
 apps/**/product-images
+
+tsconfig.tsbuildinfo

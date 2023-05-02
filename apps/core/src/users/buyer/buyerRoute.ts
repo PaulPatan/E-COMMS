@@ -1,25 +1,24 @@
-import { Request, Response, NextFunction } from 'express';
-
 import * as buyerController from './buyerController';
-import { MiddlewareFunction } from '../../types';
-import { authMiddleware } from '../middleware/auth.middleware';
+import { Route } from '../../types';
 
-const getBuyerRoute = {
+const getBuyer: Route = {
     route: '/buyer',
-    method: 'GET' as const,
-    middleware: [authMiddleware()],
+    method: 'GET',
+    role: 'buyer',
+    auth: true,
+    middleware: [],
     controller: buyerController.getBuyer
 }
 
-const postBuyerRoute = {
+const postBuyer: Route = {
     route: '/buyer',
-    method: 'POST' as const,
-    middleware: [((req: Request, res: Response, next: NextFunction) => {
-        next();
-    }) as MiddlewareFunction],
+    method: 'POST',
+    role: 'buyer',
+    auth: true,
+    middleware: [],
     controller: buyerController.postBuyer
 }
 
 export const buyerRoutes = () => {
-    return [getBuyerRoute, postBuyerRoute]
+    return [getBuyer, postBuyer]
 }

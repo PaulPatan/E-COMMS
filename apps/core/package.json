@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon -L --exec ts-node ./src/index.ts",
     "test": "jest --passWithNoTests",
-    "lint": "eslint ./src/**/*.ts"
+    "lint": "eslint ./src/**/*.ts",
+    "check": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@e-comms/shared": "*",

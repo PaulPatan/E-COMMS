@@ -1,34 +1,32 @@
 import * as adminController from './adminController';
-import { MiddlewareFunction } from '../../types';
-import { authMiddleware } from '../middleware/auth.middleware';
+import { Route } from '../../types';
 import { z } from 'zod';
-import { roleMiddleware } from '../middleware/authorization.middleware';
-import { validateSchema } from '../middleware/validateSchema';
 
 const body = z.object({
     name: z.string(),
     email: z.string()
 });
 
-
-
-//example of a route using all the middleware
-const getAdminRoute = {
+//example of a route using all the middleware fields
+const getAdmin: Route = {
     route: '/admin',
-    method: 'GET' as const,
-    role: 'admin' as const,
-    middleware: [roleMiddleware('admin'), authMiddleware(), validateSchema(body)] as MiddlewareFunction[],
+    method: 'GET',
+    // role: 'admin',
+    // auth: true,
+    middleware: [],
     controller: adminController.getAdmin
 }
 
-
-const postAdminRoute = {
+const postAdmin: Route = {
     route: '/admin',
-    method: 'POST' as const,
-    middleware: [validateSchema(body)] as MiddlewareFunction[],
+    method: 'POST',
+    // role: 'admin',
+    body,
+    // auth: true,
+    middleware: [],
     controller: adminController.postAdmin
 }
 
 export const adminRoutes = () => {
-    return [getAdminRoute, postAdminRoute]
+    return [getAdmin, postAdmin]
 }

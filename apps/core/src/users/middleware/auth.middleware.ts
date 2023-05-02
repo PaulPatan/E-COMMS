@@ -22,6 +22,8 @@ export const authMiddleware = () => (
         // ) {
         //     return new APIError(401, { message: 'Invalid token' });
         // }
+        // req.user = { ...req.user, id: "1", role: "admin" };
+
 
         // Authentication successful
         next();
