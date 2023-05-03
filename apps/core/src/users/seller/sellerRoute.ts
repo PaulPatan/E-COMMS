@@ -1,6 +1,6 @@
 
 import * as sellerController from './sellerController';
-import {  Route } from '../../types';
+import { Route } from '../../types';
 
 
 const getSeller: Route = {

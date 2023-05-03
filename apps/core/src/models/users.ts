@@ -1,6 +1,7 @@
-import { model, Schema, Types } from "mongoose";
+import bcrypt from 'bcrypt';
+import { model, Schema, Types } from 'mongoose';
 
-type TBuyer = {
+export type TBuyer = {
     id: Types.ObjectId;
     firstName: string;
     lastName: string;
@@ -28,13 +29,13 @@ const buyerSchema = new Schema<TBuyer>({
     lastName: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    passwordSalt: { type: String, required: true },
+    passwordSalt: { type: String },
     address: {
         postCode: { type: Number, required: true },
         street: { type: String, required: true },
         city: { type: String, required: true },
     },
-    role: { type: String, roles: "buyer", required: true },
+    role: { type: String, roles: 'buyer' },
     creditCardInfo: [
         {
             name: { type: String },
@@ -45,9 +46,15 @@ const buyerSchema = new Schema<TBuyer>({
     favorites: { type: [String] },
 });
 
-export const Buyer = model<TBuyer>("Buyer", buyerSchema, "users");
+buyerSchema.pre<TBuyer>('save', async function (next) {
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+    next();
+});
 
-type TSeller = {
+export const Buyer = model<TBuyer>('Buyer', buyerSchema, 'users');
+
+export type TSeller = {
     id: Types.ObjectId;
     firstName: string;
     lastName: string;
@@ -71,7 +78,7 @@ const sellerSchema = new Schema<TSeller>({
     email: { type: String, required: true },
     password: { type: String, required: true },
     passwordSalt: { type: String, required: true },
-    role: { type: String, roles: "seller", required: true },
+    role: { type: String, roles: 'seller', required: true },
     balance: { type: Number },
     creditCardInfo: [
         {
@@ -82,9 +89,9 @@ const sellerSchema = new Schema<TSeller>({
     ],
 });
 
-export const Seller = model<TSeller>("Seller", sellerSchema, "users");
+export const Seller = model<TSeller>('Seller', sellerSchema, 'users');
 
-type TAdmin = {
+export type TAdmin = {
     id: Types.ObjectId;
     firstName: string;
     lastName: string;
@@ -100,7 +107,7 @@ const adminSchema = new Schema<TAdmin>({
     email: { type: String, required: true },
     password: { type: String, required: true },
     passwordSalt: { type: String, required: true },
-    role: { type: String, roles: "admin", required: true },
+    role: { type: String, roles: 'admin', required: true },
 });
 
-export const Admin = model<TAdmin>("Admin", adminSchema, "users");
+export const Admin = model<TAdmin>('Admin', adminSchema, 'users');

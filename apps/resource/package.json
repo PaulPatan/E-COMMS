@@ -5,10 +5,10 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "ts-node-transpile-only src/index.ts",
     "test": "jest --passWithNoTests",
     "devStart": "nodemon -r dotenv/config src/index.ts",
-    "lint": "eslint ./src/**/*.ts" 
+    "lint": "eslint ./src/**/*.ts"
   },
   "keywords": [
     "resource",

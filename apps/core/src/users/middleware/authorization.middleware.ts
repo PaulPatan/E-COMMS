@@ -1,16 +1,14 @@
-import { APIError } from '@e-comms/shared/errors';
-import { Request, Response, NextFunction } from 'express';
-import { Role } from '../../types';
+import { APIError } from "@e-comms/shared/errors";
+import { NextFunction, Request, Response } from "express";
+import { Role } from "../../types";
 
-export const roleMiddleware = (role: Role) => (
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
-    // const userData = getUserAuthData();
-    if (role !== req.user?.role) {
-        throw new APIError(401, { message: 'Unauthorized!' });
-    }
-    // Authorization successful
-    next();
-};
+export const roleMiddleware =
+    (...roles: Role[]) =>
+    (req: Request, res: Response, next: NextFunction) => {
+        const hasRole = req.user?.role && roles.includes(req.user?.role);
+        if (!hasRole) {
+            throw new APIError(401, { message: "Unauthorized!" });
+        }
+        // Authorization successful
+        next();
+    };

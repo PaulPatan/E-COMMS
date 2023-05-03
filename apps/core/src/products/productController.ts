@@ -18,12 +18,17 @@ export const getProducts = async (req: IRequest, res: Response) => {
     const { page, size } = paginationAndFilters;
     const products = await service.getProducts(paginationAndFilters);
     const count = await service.getProductCount();
-    const remain = (Math.ceil(count / size)  - page >= 0) ? Math.ceil(count / size) - page : 0; 
+    const remain =
+        Math.ceil(count / size) - page >= 0
+            ? Math.ceil(count / size) - page
+            : 0;
     res.set({
         'Access-Control-Allow-Headers': 'Current-Page, Remain-Page-Count',
         'Current-Page': paginationAndFilters.page,
-        'Remain-Page-Count': remain
-    }).status(200).send(products);
+        'Remain-Page-Count': remain,
+    })
+        .status(200)
+        .send(products);
 };
 
 export const saveProduct = async (req: IRequest<ProductPost>) => {

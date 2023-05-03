@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
+import { loginBody, registerBody } from './users/buyer/buyerSchema';
 import { ProductPostSchema, ProductUpdateSchema } from './utils/schemas';
 
 export type MiddlewareFunction = {
@@ -46,6 +47,9 @@ export type Route = {
     middleware?: MiddlewareFunction[];
     controller: (req: Request, res: Response) => void;
 };
+
+export type RegisterDTO = z.infer<typeof registerBody>;
+export type LoginDTO = z.infer<typeof loginBody>;
 
 export type IRequest<Req = unknown, Res = unknown> = Request<
     Record<string, string>,

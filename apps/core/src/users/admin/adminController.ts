@@ -55,7 +55,7 @@ import { BodyType, IRequest } from '../../types';
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/Admin'
+ *               $ref: '#/components/schemas/Admin'
  *       500:
  *         description: Some server error
  *       404:
