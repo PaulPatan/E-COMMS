@@ -66,7 +66,6 @@ type TSeller = {
 };
 
 const sellerSchema = new Schema<TSeller>({
-    _id: { type: Schema.Types.ObjectId },
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     email: { type: String, required: true },

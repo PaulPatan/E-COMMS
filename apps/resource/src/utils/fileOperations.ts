@@ -44,7 +44,7 @@ export const saveOrUpdateImage = (req: Request<Params, unknown, Body>, res: Resp
         return;
     }
     let statusCode = 201;
-    const base64Data: string = file.split(';base64,').pop();
+    const base64Data: string = file.split(';base64,').pop() || '';
     try {
         if (checkIfFileExits(id, path)) {
             statusCode = 204;

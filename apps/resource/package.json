@@ -7,7 +7,7 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "test": "jest --passWithNoTests",
-    "devStart": "nodemon src/index.ts",
+    "devStart": "nodemon -r dotenv/config src/index.ts",
     "lint": "eslint ./src/**/*.ts" 
   },
   "keywords": [

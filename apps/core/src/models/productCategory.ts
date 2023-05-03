@@ -10,6 +10,6 @@ const productCategorySchema = new Schema<TProductCategory>({
 });
 
 export const ProductCategory = model<TProductCategory>(
-    "ProductCategory",
+    "productcategories",
     productCategorySchema
 );

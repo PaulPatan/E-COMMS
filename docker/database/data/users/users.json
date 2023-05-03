@@ -1,27 +1,142 @@
 [
     {
-      "name": "John",
-      "email": "example@example.com",
-      "avatar": "https://placekitten.com/300/300"
+            "_id": { "$oid": "644c145b8312ab67fd0d1220" },
+            "firstName": "Hassie",
+            "lastName": "Bruen",
+            "password": "$2b$10$A5x7ANLYX.GmXjRZZiwbwulgTo7/31uzVdaUaTgf6LFChIEA5Z66i",
+            "passwordSalt": "CHBWdnRBh1Sw/6E63klw+spZM3o1qhQyb8mCpKl9qSMOWPNIyLJJQsVJ8iweERVRTNCY1nYny+xq9pPC8f/n5iDWjdBXptCNWlT6rmAqRK3ztLJulBD7WyHvQiHAtn7x4jSTYcvzpLigF7YkqnjsU/yu1YCRJJREeUgCxvdnAUU=",
+            "role": "seller",
+            "balance": 2712,
+            "creditCardInfo": [{
+                "name": "Hassie Bruen",
+                "number": "7935 7545 9387 3316",
+                "ccv": 143
+            }]
     },
     {
-      "name": "Joanne",
-      "email": "example@example.com",
-      "avatar": "https://placekitten.com/300/300"
+            "_id": { "$oid": "644c145b8312ab67fd0d1222" },
+            "firstName": "Janessa",
+            "lastName": "Wintheiser",
+            "password": "$2b$10$9afRzU9u.rKDMj3Y1U94Du.Rj.FW5VmogPzM7FSc2.Tr3MNdhMN0i",
+            "passwordSalt": "StiTco8D19L/HAK0+yRDH9ki3g9VDD/0egx8ilBGWVPqe7W7/ev7JGBpRjkuZ3K+RCWiVRu1uoFNzUTX7zmVEuOytlDHb1A6ze+DDIV1/WkPDWLlLPFE8NjYvkG+1oV/H4rPjq3N+Dnk1RTale7Mfw4dkZX59ep66F6uLz32Dew=",
+            "role": "seller",
+            "balance": 318,
+            "creditCardInfo": [{
+                "name": "Janessa Wintheiser",
+                "number": "1993 3065 3188 8854",
+                "ccv": 213
+            }]
     },
     {
-      "name": "Bob",
-      "email": "example@example.com",
-      "avatar": "https://placekitten.com/300/300"
+            "_id": { "$oid": "644c145b8312ab67fd0d1224" },
+            "firstName": "Marian",
+            "lastName": "Smith",
+            "password": "$2b$10$2.qT19mfdg2IP7cgi7xUaesQLA/E8wdeWqX7Ie9DaLGCg5BqZfPyy",
+            "passwordSalt": "0d94oJEX1pzsV4fXsde3ZZO3JUoBOiQIQX+blMTp/Zu1kkQ2YceK0DL2BKy4gFbiTqS8ug/MtlUqavjcOcH52p58FlXGE8pHvhEYgO1BTfyofDcL8FaRQ177aVtjP68mUTlXme9YlfZRDAxjEIxQbrEheMWOlhdzDDrSyOe46ZY=",
+            "role": "seller",
+            "balance": 3909,
+            "creditCardInfo": [{
+                "name": "Marian Smith",
+                "number": "4019 6677 8258 6889",
+                "ccv": 164
+            }]
     },
     {
-      "name": "Will",
-      "email": "example@example.com",
-      "avatar": "https://placekitten.com/300/300"
+            "_id": { "$oid": "644c145b8312ab67fd0d1226" },
+            "firstName": "Kailyn",
+            "lastName": "Keebler",
+            "password": "$2b$10$p4Is2r2TabGi/n7Fc81lHeCJ0OA27Cl/HF424nXkdzvS663I/Rx7m",
+            "passwordSalt": "47vL7S8c+Jb+fbU/Syou2vgRF6AqZRUIy15poBUISIp7uCy90pkPUUIkJ+d0Yi/sp6AZss7GW8k91v5da9a6Cl7KkljP7zgx3A/6IucThrOLlHFOQCTn1XqicZtgOR+OQkVLRSrDiroDmFyGPtVn3PZqlX+kM+0tt6mbjRR6lU4=",
+            "role": "seller",
+            "balance": 8402,
+            "creditCardInfo": [{
+                "name": "Kailyn Keebler",
+                "number": "5984 9340 7352 8504",
+                "ccv": 664
+            }]
     },
     {
-      "name": "Chris",
-      "email": "example@example.com",
-      "avatar": "https://placekitten.com/300/300"
+            "_id": { "$oid": "644c145b8312ab67fd0d1228" },
+            "firstName": "Gust",
+            "lastName": "Rosenbaum",
+            "password": "$2b$10$UrG5ZEXYWOCBuch7FSAtee5MoDt/rNOdW1oj.c8AJVx765oDVm0IC",
+            "passwordSalt": "4KW6idunvKfLu0ibZUBEYDmBhB2e37X82GU0DODYBwTm57LDzqyFd2RmsrooQwvHy5D0rXGehJ0sIZbQSUp7giZAtP4HAhMOlDkv6CS0qs6UU+AqvFio5hdp7+NrRFx864y4VX1sTB3ymSkckkUNyGBQOq5EZhSLesfoMe0gy8o=",
+            "role": "seller",
+            "balance": 4591,
+            "creditCardInfo": [{
+                "name": "Gust Rosenbaum",
+                "number": "5515 2044 1036 1728",
+                "ccv": 578
+            }]
+    },
+    {
+            "_id": { "$oid": "644c145b8312ab67fd0d122a" },
+            "firstName": "Camron",
+            "lastName": "Heathcote",
+            "password": "$2b$10$WuYZAM9iTSmw1mZlvzsRDuoC.i2DDvWf7xeY7D5eohD6X01RD6GGO",
+            "passwordSalt": "WQFWSyWCwQvVA4QW4lppGaIMHxfjYtS/iJ2iJta0ad8hYaSrGxud3zsV7gKYqZbsR9dEfCiKkXRiCgCUwShFzVRNpZnLPQutCtUDfWPFpPUD4YySGhkDBDaaPqjUGROKQe892uyGAxTcxHqDRunZrhK6PktzhUGsZCIF9gEGxiU=",
+            "role": "seller",
+            "balance": 4990,
+            "creditCardInfo": [{
+                "name": "Camron Heathcote",
+                "number": "3813 9579 9277 4917",
+                "ccv": 509
+            }]
+    },
+    {
+            "_id": { "$oid": "644c145b8312ab67fd0d122c" },
+            "firstName": "Maurice",
+            "lastName": "Wiegand",
+            "password": "$2b$10$gCAOu98e.dkZRAtqE/IESOLENIqSVYhaXzMq9Bdc8szFa3zBTdu6O",
+            "passwordSalt": "WWZSZGyQHlzTgeiUbrJ4FkvMbMlXVeyBmON9CaCxqplKdLGjoMT/KwEik66/HiLHi0E/VRwUhS1r/UcwikH5fHN1YYHfoaVhLFQMZbMJ50W0tpfdXL7zmfPYGY8MhnAkGLTrWHdAO7K3b4R5v22V1lHiPKGp50pyrCOWgmWIjuQ=",
+            "role": "seller",
+            "balance": 5539,
+            "creditCardInfo": [{
+                "name": "Maurice Wiegand",
+                "number": "9952 6013 9073 6677",
+                "ccv": 311
+            }]
+    },
+    {
+            "_id": { "$oid": "644c145b8312ab67fd0d122e" },
+            "firstName": "Kiera",
+            "lastName": "Lindgren",
+            "password": "$2b$10$dDF9LFL9RSR27nAm8tF9XupQEr.FF7SSqu9u78dfd.C.PeqI4Yhuq",
+            "passwordSalt": "3nKveJHOkK1q+YTMS7EjhQe1vZBw5IrcrplDPiWg3LGBQ/Rh+c+kr9mf+KY5EV/OmKEibOpvwYQs6TLESEecO/G3yYNImVfyIVWgdL/kncC24O9W/+kY8kJrgeN1JE6zOQY2fLKzON9YjcyZ+ah7b+FTwti5q2dt0cXPzKVCuWM=",
+            "role": "seller",
+            "balance": 9028,
+            "creditCardInfo": [{
+                "name": "Kiera Lindgren",
+                "number": "3918 7736 3003 7896",
+                "ccv": 656
+            }]
+    },
+    {
+            "_id": { "$oid": "644c145b8312ab67fd0d1230" },
+            "firstName": "Ford",
+            "lastName": "Walker",
+            "password": "$2b$10$OlOurD7TcYy0UZ3ilwEdzO4/VYX3OlGhzaMaq1m6MwQbLwoCBcDai",
+            "passwordSalt": "olOjzRY7Mac/Hj4LHNY68DBqwZi9+cnHv3I7p69nRZpcumg0XljbuwPOu8AQ2pkXEUNCSV9YWI5Bsh4BbZASYC/MT97aEdqEM0SWIXotG7BcQDVCIyd3f2kG2i1RIzU0wC/UPncUycCNnsw6hd5aI6+Yq3BI0KYRQtsJzFBt934=",
+            "role": "seller",
+            "balance": 5677,
+            "creditCardInfo": [{
+                "name": "Ford Walker",
+                "number": "2861 9157 8676 4034",
+                "ccv": 608
+            }]
+    },
+    {
+            "_id": { "$oid": "644c145b8312ab67fd0d1232" },
+            "firstName": "Jacinthe",
+            "lastName": "Heaney",
+            "password": "$2b$10$mDgtjW0s9.9uu8T8r/.Mb.X3BHeGja6NpipoI6C4GXyJcHxWOl63e",
+            "passwordSalt": "Ys+DB/LhETea1EQVTCRGTNvGdOe9J9RVwhpn3yLdPQDn0oCWQ27rd5ar/mBqfm5+NthvCtMW8ZYU0L1Aqkqm/dGVjb0QfuqLf+yzuQJ1ctdmt2bG+nDghg6S76tcWeWkqyG9/L/GCmEoMC0FCg9jk0zIAUCrMz+RbG0dU6pIFY0=",
+            "role": "seller",
+            "balance": 4000,
+            "creditCardInfo": [{
+                "name": "Jacinthe Heaney",
+                "number": "7258 4160 5045 6213",
+                "ccv": 228
+            }]
     }
-  ]
+]

@@ -1,11 +1,9 @@
-import * as dotenv from "dotenv";
 import express, { Express } from "express";
 import fs from "fs";
 import router from "./router/baseRouter";
 import { IMAGE_PATH, AVATAR_PATH } from "./utils/config";
 import morgan from "morgan";
 
-dotenv.config();
 const app: Express = express();
 app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true, limit: '5mb'}));

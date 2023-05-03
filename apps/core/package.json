@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "E-Commerce application backend",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon -L --exec ts-node ./src/index.ts",
+    "start": "nodemon -L --exec ts-node-transpile-only -r dotenv/config ./src/index.ts",
     "test": "jest --passWithNoTests",
     "lint": "eslint ./src/**/*.ts",
     "check": "tsc --noEmit --skipLibCheck"

@@ -1,11 +1,10 @@
-import { BodyType } from "../../types";
-import { Request } from 'express';
+import { BodyType, IRequest } from '../../types';
 
 export function getSeller() {
     return 'Hello from Seller';
 }
 
-export function postSeller(req: Request) {
-    const { name, email } = req.body as BodyType;
-    return ({ 'seller': { name, email } });
+export function postSeller(req: IRequest<BodyType>) {
+    const { name, email } = req.body;
+    return { seller: { name, email } };
 }

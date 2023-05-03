@@ -21,3 +21,9 @@ Lint test:
     - .test-common
   script:
     - npm run lint:ci
+
+Type test:
+  extends:
+    - .test-common
+  script:
+    - npm run check:ci

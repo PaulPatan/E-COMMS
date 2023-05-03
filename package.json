@@ -7,7 +7,8 @@
   },
   "scripts": {
     "test:ci": "npx nx run-many --target=test",
-    "lint:ci": "npx nx run-many --target=lint"
+    "lint:ci": "npx nx run-many --target=lint",
+    "check:ci": "npx nx run-many --target=check"
   },
   "private": true,
   "devDependencies": {

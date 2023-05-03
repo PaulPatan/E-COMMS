@@ -1,11 +1,11 @@
-import { model, Schema, Types } from "mongoose";
+import { model, Schema, Types } from 'mongoose';
 
 type TReview = {
     id: Types.ObjectId;
     buyerId: Types.ObjectId;
     creationDate: string;
     description: string;
-    rating: number[];
+    rating: number;
     marked: {
         pinned: boolean; //(default value is false)
         description: string;
@@ -13,10 +13,10 @@ type TReview = {
 };
 
 const reviewSchema = new Schema<TReview>({
-    buyerId: { type: Schema.Types.ObjectId, ref: "usres" },
+    buyerId: { type: Schema.Types.ObjectId, ref: 'users' },
     creationDate: { type: String },
     description: { type: String },
-    rating: { type: (Number[5] = [1, 2, 3, 4, 5]) },
+    rating: { type: Number, min: 1, max: 5 },
 });
 
-export const Review = model<TReview>("Review", reviewSchema);
+export const Review = model<TReview>('Review', reviewSchema);
