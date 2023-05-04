@@ -43,6 +43,7 @@
     "zod": "^3.21.4"
   },
   "exports": {
-    "./errors": "./errors.ts"
+    "./errors": "./errors.ts",
+    "./logger": "./logger.ts"
   }
 }

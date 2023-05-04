@@ -13,7 +13,8 @@
   "dependencies": {
     "@e-comms/shared": "*",
     "bcrypt": "^5.1.0",
-    "mongoose": "^7.0.5"
+    "mongoose": "^7.0.5",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

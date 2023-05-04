@@ -23,8 +23,10 @@
     "apps/*"
   ],
   "dependencies": {
+    "@aws-sdk/client-cloudwatch-logs": "^3.325.0",
     "dotenv": "^16.0.3",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "winston": "^3.8.2"
   }
 }

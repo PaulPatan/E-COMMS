@@ -13,6 +13,7 @@ import { roleMiddleware } from './users/middleware/authorization.middleware';
 import { validateSchema } from './users/middleware/validateSchema';
 import { sellersRoutes } from './users/seller/sellerRoute';
 import envResult from './utils/env';
+import './utils/logger';
 
 await databaseConnection();
 
