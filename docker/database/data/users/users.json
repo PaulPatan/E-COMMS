@@ -1,142 +1,392 @@
 [
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1220" },
-            "firstName": "Hassie",
-            "lastName": "Bruen",
-            "password": "$2b$10$A5x7ANLYX.GmXjRZZiwbwulgTo7/31uzVdaUaTgf6LFChIEA5Z66i",
-            "passwordSalt": "CHBWdnRBh1Sw/6E63klw+spZM3o1qhQyb8mCpKl9qSMOWPNIyLJJQsVJ8iweERVRTNCY1nYny+xq9pPC8f/n5iDWjdBXptCNWlT6rmAqRK3ztLJulBD7WyHvQiHAtn7x4jSTYcvzpLigF7YkqnjsU/yu1YCRJJREeUgCxvdnAUU=",
-            "role": "seller",
-            "balance": 2712,
-            "creditCardInfo": [{
-                "name": "Hassie Bruen",
-                "number": "7935 7545 9387 3316",
-                "ccv": 143
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5c" },
+        "firstName": "Hertha",
+        "lastName": "Quigley",
+        "password": "$2b$10$EcA0HC2r8xEWBmUpJxhWzegCFNw2YHMaS3V9LW2Pr44bi2dgP5Dzi",
+        "passwordSalt": "OylG2Vj5OKTJBx6mLNAF9HnEj1mryTOpDzvcejf3F5QF5BhqslF8JBBTWMxmAfDGnxUguSkXHu8PO+H5Cv/xEcrhmo4MRapxjR1GodEIZyxpvDQcyHZrVDuZg0/f+CvbjjqqrCYz9/Ch1hQURPJvn+K19C/Nfwc+WXXm1fdAciA=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Hertha Quigley",
+                "number": "2366 7584 6372 2683",
+                "ccv": 792
+            }
+        ],
+        "address": {
+            "postCode": 933107,
+            "street": "0294 Geo View",
+            "city": "Madelinetown"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1222" },
-            "firstName": "Janessa",
-            "lastName": "Wintheiser",
-            "password": "$2b$10$9afRzU9u.rKDMj3Y1U94Du.Rj.FW5VmogPzM7FSc2.Tr3MNdhMN0i",
-            "passwordSalt": "StiTco8D19L/HAK0+yRDH9ki3g9VDD/0egx8ilBGWVPqe7W7/ev7JGBpRjkuZ3K+RCWiVRu1uoFNzUTX7zmVEuOytlDHb1A6ze+DDIV1/WkPDWLlLPFE8NjYvkG+1oV/H4rPjq3N+Dnk1RTale7Mfw4dkZX59ep66F6uLz32Dew=",
-            "role": "seller",
-            "balance": 318,
-            "creditCardInfo": [{
-                "name": "Janessa Wintheiser",
-                "number": "1993 3065 3188 8854",
-                "ccv": 213
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5e" },
+        "firstName": "Beryl",
+        "lastName": "Farrell",
+        "password": "$2b$10$hovWFdspcazMT8qottUg5.Cg1l9f4YoZefrWQt2T5Pmx.EOA/eknC",
+        "passwordSalt": "j2znbqm+F+64KzZ1RKxDo1nIY92Pf3Dgl/VoRvvQPocdnnFcLPN+QJGzqznAJXS48iZxrg1UUpqT1sXe2ec1x+t4x4LKuv1unVdiBlIhvjcxZ0JSryYcYklEEOPCcmqQ8qItHtx0aOqalu3VXWVbCdCLDNiti6cg53SMMTvTx+4=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Beryl Farrell",
+                "number": "9427 2232 9453 7518",
+                "ccv": 204
+            }
+        ],
+        "address": {
+            "postCode": 675073,
+            "street": "5734 Camryn Loaf",
+            "city": "Bodeport"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1224" },
-            "firstName": "Marian",
-            "lastName": "Smith",
-            "password": "$2b$10$2.qT19mfdg2IP7cgi7xUaesQLA/E8wdeWqX7Ie9DaLGCg5BqZfPyy",
-            "passwordSalt": "0d94oJEX1pzsV4fXsde3ZZO3JUoBOiQIQX+blMTp/Zu1kkQ2YceK0DL2BKy4gFbiTqS8ug/MtlUqavjcOcH52p58FlXGE8pHvhEYgO1BTfyofDcL8FaRQ177aVtjP68mUTlXme9YlfZRDAxjEIxQbrEheMWOlhdzDDrSyOe46ZY=",
-            "role": "seller",
-            "balance": 3909,
-            "creditCardInfo": [{
-                "name": "Marian Smith",
-                "number": "4019 6677 8258 6889",
-                "ccv": 164
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a60" },
+        "firstName": "Holden",
+        "lastName": "Skiles",
+        "password": "$2b$10$K22cQ5T/4LWM1gnB/dm3ceWRcgsEFk1vytP0ptQ8GkqEkiN3tUGZe",
+        "passwordSalt": "Vne0bn3s7AhUpHpFCT8z405ObmXdRRgPLkCj4brn9w7MR5BP1CR7JifRSIpF89AE5MIORS2Pl4ks582WWU1+URJCbtDDMHCO82HEkC0HEDSqR7zC24LYRHMkA51+8py9oWFw5aKQRwqcz3eTaom47OkDj6vtOKyjOLnOhzBRC0E=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Holden Skiles",
+                "number": "5369 1525 1486 3205",
+                "ccv": 187
+            }
+        ],
+        "address": {
+            "postCode": 640741,
+            "street": "844 Andreanne Centers",
+            "city": "Aliviastad"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1226" },
-            "firstName": "Kailyn",
-            "lastName": "Keebler",
-            "password": "$2b$10$p4Is2r2TabGi/n7Fc81lHeCJ0OA27Cl/HF424nXkdzvS663I/Rx7m",
-            "passwordSalt": "47vL7S8c+Jb+fbU/Syou2vgRF6AqZRUIy15poBUISIp7uCy90pkPUUIkJ+d0Yi/sp6AZss7GW8k91v5da9a6Cl7KkljP7zgx3A/6IucThrOLlHFOQCTn1XqicZtgOR+OQkVLRSrDiroDmFyGPtVn3PZqlX+kM+0tt6mbjRR6lU4=",
-            "role": "seller",
-            "balance": 8402,
-            "creditCardInfo": [{
-                "name": "Kailyn Keebler",
-                "number": "5984 9340 7352 8504",
-                "ccv": 664
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a62" },
+        "firstName": "Anthony",
+        "lastName": "Friesen",
+        "password": "$2b$10$VBKgAbNzeqZeln/OPhkqsefLvxqh7pUKoDrjaWD8krxCBlQkzJ3/2",
+        "passwordSalt": "KcMphMxqw3rBp5vC10q6pSlX8qYtBKaPb3zQFGJ2AnhRVSwFWkoXuxanXNhbjBbeGb6vaL5F11Gml+IK4g4V46Y+5MBlU9AJK//Q8LueoVCDcJzaEc0Qb+Mxu/g6Hx4+8kvpm8nmeTGTSBAp3o+a3vCBvGxjjIWRWn39vuFtzP8=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Anthony Friesen",
+                "number": "3253 7510 9747 5489",
+                "ccv": 185
+            }
+        ],
+        "address": {
+            "postCode": 744400,
+            "street": "9196 Jett Loaf",
+            "city": "Lake Irvingmouth"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1228" },
-            "firstName": "Gust",
-            "lastName": "Rosenbaum",
-            "password": "$2b$10$UrG5ZEXYWOCBuch7FSAtee5MoDt/rNOdW1oj.c8AJVx765oDVm0IC",
-            "passwordSalt": "4KW6idunvKfLu0ibZUBEYDmBhB2e37X82GU0DODYBwTm57LDzqyFd2RmsrooQwvHy5D0rXGehJ0sIZbQSUp7giZAtP4HAhMOlDkv6CS0qs6UU+AqvFio5hdp7+NrRFx864y4VX1sTB3ymSkckkUNyGBQOq5EZhSLesfoMe0gy8o=",
-            "role": "seller",
-            "balance": 4591,
-            "creditCardInfo": [{
-                "name": "Gust Rosenbaum",
-                "number": "5515 2044 1036 1728",
-                "ccv": 578
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a64" },
+        "firstName": "Ansel",
+        "lastName": "Schneider",
+        "password": "$2b$10$W43kxBeOCgWvPVL//doV5ejQQj5ZPZ8O6gS4k/pSVXkkN4oP03RZi",
+        "passwordSalt": "v7z1zo7/EJu9TBkan6yVR3wgPsiuLOkn9/xWkWpimXAJhmjQmDNqZJy5KxaF7By3oyjOm14R7m8fZJcRH2A8YI0xEFXWhQdAkvRiz2o2vcshRJ2Q1GBBU2VbAqMtgNIxg2MYEPmrpWHsuOf+Y5ALQnH/n0XSuYVZahhDmEvhuQ4=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Ansel Schneider",
+                "number": "3717 7851 6933 8899",
+                "ccv": 970
+            }
+        ],
+        "address": {
+            "postCode": 160341,
+            "street": "865 Mckenzie Courts",
+            "city": "Mansfield"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d122a" },
-            "firstName": "Camron",
-            "lastName": "Heathcote",
-            "password": "$2b$10$WuYZAM9iTSmw1mZlvzsRDuoC.i2DDvWf7xeY7D5eohD6X01RD6GGO",
-            "passwordSalt": "WQFWSyWCwQvVA4QW4lppGaIMHxfjYtS/iJ2iJta0ad8hYaSrGxud3zsV7gKYqZbsR9dEfCiKkXRiCgCUwShFzVRNpZnLPQutCtUDfWPFpPUD4YySGhkDBDaaPqjUGROKQe892uyGAxTcxHqDRunZrhK6PktzhUGsZCIF9gEGxiU=",
-            "role": "seller",
-            "balance": 4990,
-            "creditCardInfo": [{
-                "name": "Camron Heathcote",
-                "number": "3813 9579 9277 4917",
-                "ccv": 509
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a66" },
+        "firstName": "Rae",
+        "lastName": "Hammes",
+        "password": "$2b$10$2a3BLciAXoTE0976OJ9YcuYJ67aVGF2Zjomh3wE0WLzpJH8.y1/6q",
+        "passwordSalt": "dAYJzsZ+nYLDdCeKS3GFCWPkQcXsKtN3tcb/eAU8/zxEWS1IO0GEf3oawOPRerr8WAP+ANtIQqzfPdD2qOpHZQgdoKpYUIGqszetBHxnkPEfrUR2CuPRFm9p5KkOGQEIB+XCD98k0RxY6ZYj0zB93z9zEwSWolo+eN/oFjwjPsQ=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Rae Hammes",
+                "number": "1206 7670 2176 6816",
+                "ccv": 744
+            }
+        ],
+        "address": {
+            "postCode": 654222,
+            "street": "59480 Goodwin Garden",
+            "city": "Schuppeton"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d122c" },
-            "firstName": "Maurice",
-            "lastName": "Wiegand",
-            "password": "$2b$10$gCAOu98e.dkZRAtqE/IESOLENIqSVYhaXzMq9Bdc8szFa3zBTdu6O",
-            "passwordSalt": "WWZSZGyQHlzTgeiUbrJ4FkvMbMlXVeyBmON9CaCxqplKdLGjoMT/KwEik66/HiLHi0E/VRwUhS1r/UcwikH5fHN1YYHfoaVhLFQMZbMJ50W0tpfdXL7zmfPYGY8MhnAkGLTrWHdAO7K3b4R5v22V1lHiPKGp50pyrCOWgmWIjuQ=",
-            "role": "seller",
-            "balance": 5539,
-            "creditCardInfo": [{
-                "name": "Maurice Wiegand",
-                "number": "9952 6013 9073 6677",
-                "ccv": 311
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a68" },
+        "firstName": "Jordan",
+        "lastName": "Russel",
+        "password": "$2b$10$9Qfs94bgMEyg8adCSv.CMe/QHEjATtnBnlsvSHDAooPP9N8HcK0uS",
+        "passwordSalt": "HS2O53PysFmBju7jWS36S0rFzDn5CTIRP7olS5sjAXKp9xygoM5GxMhsoGSJ0eJtzg6+uCB5NTdgnjc9do35XxN2pkaNBj/PW60E0lfVZyzfZBYiljyPLOGmjv7ClbWI2tRuZVvaP2Zzz2bXr9O1Zh+FzM41awLIPRqrnM/nV4Q=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Jordan Russel",
+                "number": "5008 8415 7631 5185",
+                "ccv": 513
+            }
+        ],
+        "address": {
+            "postCode": 906057,
+            "street": "8503 Parisian Spur",
+            "city": "Indio"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d122e" },
-            "firstName": "Kiera",
-            "lastName": "Lindgren",
-            "password": "$2b$10$dDF9LFL9RSR27nAm8tF9XupQEr.FF7SSqu9u78dfd.C.PeqI4Yhuq",
-            "passwordSalt": "3nKveJHOkK1q+YTMS7EjhQe1vZBw5IrcrplDPiWg3LGBQ/Rh+c+kr9mf+KY5EV/OmKEibOpvwYQs6TLESEecO/G3yYNImVfyIVWgdL/kncC24O9W/+kY8kJrgeN1JE6zOQY2fLKzON9YjcyZ+ah7b+FTwti5q2dt0cXPzKVCuWM=",
-            "role": "seller",
-            "balance": 9028,
-            "creditCardInfo": [{
-                "name": "Kiera Lindgren",
-                "number": "3918 7736 3003 7896",
-                "ccv": 656
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6a" },
+        "firstName": "Hassan",
+        "lastName": "Luettgen",
+        "password": "$2b$10$GsXaKLYh4x9Lij8TYEBhBOxCHqyCCgIq4PeGfSpyS8wfTnl3G7Cse",
+        "passwordSalt": "qjeDvmC3iDNdVS3IpJv8C4ocK6ZJNKUXfB2nRCfl5E1ib2GGp/9499A0JZ6IsFjrhCCCJ5nc8Apmpb3xBhklZ1W0G7/vUzP6ks0wfELfEg/mhSfI2aYgtqphG4nyr9l1j+EckmKL2k+N/e5c0txRAWOF7SaqPmKCZs384FOOIFs=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Hassan Luettgen",
+                "number": "3425 6312 5348 7327",
+                "ccv": 632
+            }
+        ],
+        "address": {
+            "postCode": 625996,
+            "street": "8346 Kovacek Glens",
+            "city": "North Maryview"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1230" },
-            "firstName": "Ford",
-            "lastName": "Walker",
-            "password": "$2b$10$OlOurD7TcYy0UZ3ilwEdzO4/VYX3OlGhzaMaq1m6MwQbLwoCBcDai",
-            "passwordSalt": "olOjzRY7Mac/Hj4LHNY68DBqwZi9+cnHv3I7p69nRZpcumg0XljbuwPOu8AQ2pkXEUNCSV9YWI5Bsh4BbZASYC/MT97aEdqEM0SWIXotG7BcQDVCIyd3f2kG2i1RIzU0wC/UPncUycCNnsw6hd5aI6+Yq3BI0KYRQtsJzFBt934=",
-            "role": "seller",
-            "balance": 5677,
-            "creditCardInfo": [{
-                "name": "Ford Walker",
-                "number": "2861 9157 8676 4034",
-                "ccv": 608
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6c" },
+        "firstName": "Oliver",
+        "lastName": "Torp",
+        "password": "$2b$10$F2SW.raRiV25CgMgARfzgOTLwlV8Mgu/EDhTXa3OATYBUGWxNipQi",
+        "passwordSalt": "qrEFXLPtNjU6LYBAyztUJxADbuzZUWxq7H3iTGvLK+gKnvwPjgQ447o2Ov4ZOs00zFi6zwNqVHaUgfV3OsIIMPfznPiT4oeXjVNLb/SCjOfoIP/fort1iR14NimAUt6G/x4EGgxinQAv9BR+Z/qDEN02Xy/u8AM3lSKUCpkLZg8=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "Oliver Torp",
+                "number": "8206 3594 9283 7983",
+                "ccv": 274
+            }
+        ],
+        "address": {
+            "postCode": 646781,
+            "street": "92780 Prudence Junctions",
+            "city": "Rosenbaumside"
+        },
+        "favorites": {
+            "type": []
+        }
     },
     {
-            "_id": { "$oid": "644c145b8312ab67fd0d1232" },
-            "firstName": "Jacinthe",
-            "lastName": "Heaney",
-            "password": "$2b$10$mDgtjW0s9.9uu8T8r/.Mb.X3BHeGja6NpipoI6C4GXyJcHxWOl63e",
-            "passwordSalt": "Ys+DB/LhETea1EQVTCRGTNvGdOe9J9RVwhpn3yLdPQDn0oCWQ27rd5ar/mBqfm5+NthvCtMW8ZYU0L1Aqkqm/dGVjb0QfuqLf+yzuQJ1ctdmt2bG+nDghg6S76tcWeWkqyG9/L/GCmEoMC0FCg9jk0zIAUCrMz+RbG0dU6pIFY0=",
-            "role": "seller",
-            "balance": 4000,
-            "creditCardInfo": [{
-                "name": "Jacinthe Heaney",
-                "number": "7258 4160 5045 6213",
-                "ccv": 228
-            }]
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6e" },
+        "firstName": "D'angelo",
+        "lastName": "Nitzsche",
+        "password": "$2b$10$G/8cNQ/hIfddtoDNyt4tNOLLv0TvKk.Mqm3jgIanzy11uRtjyLTue",
+        "passwordSalt": "+FwJIqfSVYncloXCGPAEPZwoxgFHq+TD5s5IXEshKZtRxpK/YOYSlERKljadzXw4kSAo5Xvzv+/y9votVxjlk85DfSW4e9IAVfLwCkrAXPG4+aUOBcgL21k6Ib2i04fPnsiQkurqCFTC22UlKs5LHihHOcBqVstxvH5E5oq0tDc=",
+        "role": "buyer",
+        "creditCardInfo": [
+            {
+                "name": "D'angelo Nitzsche",
+                "number": "2884 7929 1203 2552",
+                "ccv": 437
+            }
+        ],
+        "address": {
+            "postCode": 130462,
+            "street": "71582 Marcelle Neck",
+            "city": "Dooleyboro"
+        },
+        "favorites": {
+            "type": []
+        }
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5c" },
+        "firstName": "Nelda",
+        "lastName": "Bechtelar",
+        "password": "$2b$10$g7MRDNxV5rW4T4tk3FZFouf5bqs7m8kIP/2DMWhZkPMbb.8mdLyPG",
+        "passwordSalt": "wFT9ajXztZl7Bcxl/PB9FfH0cWpJkXnfU6xBxi5kjXY/oVx+Jivj7PJBGIythtMtX2+QqoG++ZDi8wGnJVvltEeTebvBEy6vkT/z45hqvIX6ljiJ40SK3qHOZcFx7tf2YxK+5yQy1GHksGBGR0MphR+xXoNBgeWWcVaf8noFsfo=",
+        "role": "seller",
+        "balance": 6390,
+        "creditCardInfo": [
+            {
+                "name": "Nelda Bechtelar",
+                "number": "3698 3531 6483 9426",
+                "ccv": 813
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5e" },
+        "firstName": "Eugenia",
+        "lastName": "Schmitt",
+        "password": "$2b$10$3giKBgrtqz8eVE/o3GChV.dBNsX/wAMD4gTLUmj39aFUhOstGrjje",
+        "passwordSalt": "83GIba/78AoA3bPzLvSwX1n8BaUu+xB9ZZeq4u5y5oHVpkoNsTPE84pzlBqBr4wArZRdmc3shTNPM2kPprKLEot0saq7nHEMA8qeXTgdEdIAZbtcAjXYL0tNwSe6ADlwa6g5/7EutcINYQI4EivdJ/woFb06Maunib2Og1Nk1p8=",
+        "role": "seller",
+        "balance": 3472,
+        "creditCardInfo": [
+            {
+                "name": "Eugenia Schmitt",
+                "number": "4542 7254 8199 5787",
+                "ccv": 759
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a60" },
+        "firstName": "Freeman",
+        "lastName": "Kessler",
+        "password": "$2b$10$RRHXh/8At6EZaqM2U998ou/bYVYD6448j.vT7rbVZV7bnJxnQ4OOq",
+        "passwordSalt": "o7kKfs9ALcVbRAjepJLgfStSdtK36RQ1U/QWM0YfD5+oF9pgM5LQzud1b2Q8GL091H+sARRRj19xNUU0MwzKrVh+yNnDbduYSkAR2kuUt69DTWzYiXJOESKOTjyzjGYKgs0VUiVl1AObX2qTU/p1VtpIeB3Fr+DV9bQBcswj1Y4=",
+        "role": "seller",
+        "balance": 3793,
+        "creditCardInfo": [
+            {
+                "name": "Freeman Kessler",
+                "number": "3673 6297 6908 4771",
+                "ccv": 752
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a62" },
+        "firstName": "Bella",
+        "lastName": "Oberbrunner",
+        "password": "$2b$10$uPrSc.0x6/JYS4IKh3klie2NF5iNLk59.XBSygd8etDIXuOXYIgbS",
+        "passwordSalt": "AbwH29m4VmjrT99E4mSqN6UHpULGtKL/sJfYeRQDpdw2Hhw/aqmcs/XvL/17lwUdsYr67KsySnfamjy9FxvopbEUjq8W6+9jO79kkH2VcA9LHAoMVhRWQUFnhPHoCdLrU6jwfLkgJSOneBzKYyCPVKlusdm+biiMziALHwumgPg=",
+        "role": "seller",
+        "balance": 4725,
+        "creditCardInfo": [
+            {
+                "name": "Bella Oberbrunner",
+                "number": "2128 9395 4321 5354",
+                "ccv": 763
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a64" },
+        "firstName": "Jammie",
+        "lastName": "Haley",
+        "password": "$2b$10$fb45u6hGGzJFnvjH03RyI.SESmWnOGfyc2ce0ZqkeFo8wvDooGNyS",
+        "passwordSalt": "dYXL8ENe+I7Nfcbq9nbxnkmHwIAzina2ZBik/wND2bq53ue5ffLe3kl+rtvaK5OmaerLkTFlfTfSF1LritlSe8o3J/pKA8MYFHcKokKERdZ2IvrXnIJlzkdn2+ehUX2jW+HgC8p/pN8MPnKkMhRsszJtm+Mu2lznvwihRnTWA5Q=",
+        "role": "seller",
+        "balance": 1394,
+        "creditCardInfo": [
+            {
+                "name": "Jammie Haley",
+                "number": "4170 5533 1675 2886",
+                "ccv": 460
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a66" },
+        "firstName": "Amir",
+        "lastName": "Olson",
+        "password": "$2b$10$oPb4GJaloxgp5CbE2DewUOiUfBCYoNPBGU2m5rs6BwQdJOukfjr.S",
+        "passwordSalt": "a0+BPlSj+I5O1wwXy9j4fb9nFjwiZGc0VrcfpV8LeAYBeOOSkSBubyFM3QVoRAPWqvkMd+k+t8cvBety+QiwkF6fApd3jAwc/8HAenopNYY+mR9SY+R22hHzJ5BH2O+JGAb5y6SbSGlQUf7SpRCk3pfndTRBX5gK6HoI+tC9fsQ=",
+        "role": "seller",
+        "balance": 9413,
+        "creditCardInfo": [
+            {
+                "name": "Amir Olson",
+                "number": "6801 5015 3962 9367",
+                "ccv": 784
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a68" },
+        "firstName": "William",
+        "lastName": "Zemlak",
+        "password": "$2b$10$/2158EsgH5IUgcyjSdUi4uFOk3KKD5AceFIQ3Ow12sXvo1hhEPpwO",
+        "passwordSalt": "mx+UlNijbEjfN5pc8JvKDmm44Ip+4sSsEFpm36b0uPVzb9gtzdiwDYvy8IohIxMHIoAsC2ayvUoAf37ttEejsB9SZacKBj6+kFZGDxPh4WDN8wrDeEGG6gLI+Dw114PMadDDsHDS+zJWzveOXtDrjwXrp/Bqk1vdDdgvZJb1nF8=",
+        "role": "seller",
+        "balance": 3671,
+        "creditCardInfo": [
+            {
+                "name": "William Zemlak",
+                "number": "3802 9992 5722 2128",
+                "ccv": 883
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6a" },
+        "firstName": "Theo",
+        "lastName": "Ullrich",
+        "password": "$2b$10$UBOdkA0/h2/TYeOsjSU3xuceesqUNLfDdU8u/VZWBk4wDJYlcCYjS",
+        "passwordSalt": "Y1s1ey37g8yyzvkgbpLBmMlie1uM6+qlkoCskZz+xZrjnQuaGH2YFIRHCLO/wrlhM+w5dBX+T/yOSLlu94M5A2Sfz/2/eQ9HEsGcR5MFoaHxqGQeK7A8gUwT3f+fe+oUU1TuXhM1x8wM/B2rEyjapNrjCvFQV9ZlVmBEi8+C/y8=",
+        "role": "seller",
+        "balance": 4489,
+        "creditCardInfo": [
+            {
+                "name": "Theo Ullrich",
+                "number": "6631 3447 8270 8345",
+                "ccv": 621
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6c" },
+        "firstName": "Haleigh",
+        "lastName": "Hintz",
+        "password": "$2b$10$cs00DipmcKoLast1hG9BYemyYcAACM5cvxQFjxb0l7mVGIphMILoq",
+        "passwordSalt": "/bKTFV2/gsWoySOA6yXNml03FiioXLuA1axEPhMF9DhTEsTA0bH3AkC3qPZoMXzWZfwEcN+eTRePkyl4JCGxrDj+DHMIHHKt3Qao/3nvze4Cxk3t40vSW0lwDgRjCf05oILbW6AWZYXZOzfiRRf5rQcVng2O4LB5lOnjkN1S/TI=",
+        "role": "seller",
+        "balance": 7487,
+        "creditCardInfo": [
+            {
+                "name": "Haleigh Hintz",
+                "number": "3868 5376 6297 8819",
+                "ccv": 945
+            }
+        ]
+    },
+    {
+        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6e" },
+        "firstName": "Nikko",
+        "lastName": "Prosacco",
+        "password": "$2b$10$Ky7JsX59dx.d25NfS..YYuYcKdWWQDW/GmPgCjkX4neOqf52ijQJC",
+        "passwordSalt": "aef0NnWvHnjHiuEZYqwllFCfl+0RCUlOxrr/bh6G+SYJdEo+sgthBNUQ1LA3xwUxcUuaOEBP0C4U6ZrIjhSUHcRolRaP+39+maWpHuWDuP6SWLc7vosFJ9P7n8vq9GIFJDQ8i171XOrzjrC5xW5b8FkL/hV6d8O2cLhOxk+JsqI=",
+        "role": "seller",
+        "balance": 646,
+        "creditCardInfo": [
+            {
+                "name": "Nikko Prosacco",
+                "number": "2748 1996 5714 6718",
+                "ccv": 367
+            }
+        ]
     }
 ]

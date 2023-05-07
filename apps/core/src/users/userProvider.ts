@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import * as User from "../models/users";
 import { RegisterDTO } from "../types";
 
@@ -16,7 +17,7 @@ export async function getUserByEmail(email: string) {
     }
 }
 
-export const createUser = async (userModel: RegisterDTO) => {
+export const createUser = async <T>(userModel: RegisterDTO, model: mongoose.Model<T> ) => {
     const {
         firstName,
         lastName,
@@ -25,7 +26,7 @@ export const createUser = async (userModel: RegisterDTO) => {
         address: { postCode, street, city },
     } = userModel;
 
-    return await User.Buyer.create({
+    return await model.create({
         firstName,
         lastName,
         email,

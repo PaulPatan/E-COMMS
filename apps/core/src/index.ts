@@ -15,6 +15,7 @@ import { sellersRoutes } from './users/seller/sellerRoute';
 import envResult from './utils/env';
 import './utils/logger';
 
+
 await databaseConnection();
 
 type HttpMethod = `${Lowercase<Route['method']>}`;

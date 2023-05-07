@@ -1,6 +1,28 @@
-import * as z from 'zod';
+import { z } from 'zod';
 
 export const schema = z.object({
+    SALT_ROUNDS: z
+        .string()
+        .optional()
+        .default('10')
+        .transform((val, ctx) => {
+            const parsed = Number(val);
+
+            if (!isNaN(parsed)) {
+                return parsed;
+            }
+
+            ctx.addIssue({
+                code: z.ZodIssueCode.custom,
+                message: 'Not a number',
+            });
+
+            // This is a special symbol you can use to
+            // return early from the transform function.
+            // It has type `never` so it does not affect the
+            // inferred return type.
+            return z.NEVER;
+        }),
     JWT_SECRET: z.string().nonempty(),
     PORT: z.string().optional().default('5000'),
     MONGO_POOLSIZE: z

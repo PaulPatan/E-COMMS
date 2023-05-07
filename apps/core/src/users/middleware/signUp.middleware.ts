@@ -1,7 +1,8 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
+import { Buyer } from '../../models/users';
 import { IRequest, RegisterDTO } from '../../types';
-import { createUser } from '../userProvider';
+import { createUser, getUserByEmail } from '../userProvider';
 
 passport.use(
     'signup',
@@ -21,7 +22,15 @@ passport.use(
                     address: req.body.address,
                 };
 
-                const buyer = await createUser(userModel);
+                const userExists = await getUserByEmail(email);
+
+                if (userExists) {
+                    return done(null, false, {
+                        message: 'User already exists',
+                    });
+                }
+
+                const buyer = await createUser(userModel, Buyer);
 
                 return done(null, buyer);
             } catch (error) {

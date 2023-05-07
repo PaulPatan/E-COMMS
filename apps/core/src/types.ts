@@ -1,7 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
+import { sellerBody } from './users/admin/adminSchema';
 import { loginBody, registerBody } from './users/buyer/buyerSchema';
-import { ProductPostSchema, ProductUpdateSchema } from './utils/schemas';
+import {
+    BuyersPostSchema,
+    ProductPostSchema,
+    ProductUpdateSchema,
+} from './utils/schemas';
 
 export type MiddlewareFunction = {
     (req: Request, res: Response, next: NextFunction): void;
@@ -36,6 +41,13 @@ export type paginationAndFilters = {
     category: string;
 };
 
+export type Filter = {
+    _id: string;
+    role?: string;
+};
+
+export type BuyerDTO = z.infer<typeof BuyersPostSchema>;
+
 export type Role = 'admin' | 'seller' | 'buyer';
 
 export type Route = {
@@ -50,6 +62,7 @@ export type Route = {
 
 export type RegisterDTO = z.infer<typeof registerBody>;
 export type LoginDTO = z.infer<typeof loginBody>;
+export type SellerDTO = z.infer<typeof sellerBody>;
 
 export type IRequest<Req = unknown, Res = unknown> = Request<
     Record<string, string>,

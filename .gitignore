@@ -51,6 +51,6 @@ packages/*/build
 apps/**/avatars
 apps/**/product-images
 
-apps/*/.env
+.env
 
 tsconfig.tsbuildinfo

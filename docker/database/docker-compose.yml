@@ -21,6 +21,5 @@ services:
     volumes:
       - ./data:/data
 
-
 volumes:
   mongodb_data_container:

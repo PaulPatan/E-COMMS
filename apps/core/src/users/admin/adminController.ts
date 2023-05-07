@@ -1,5 +1,7 @@
 import { APIError } from '@e-comms/shared/errors';
-import { BodyType, IRequest } from '../../types';
+import { BodyType, IRequest, SellerDTO } from '../../types';
+import { createUser } from '../userProvider';
+import { Seller } from '../../models/users';
 
 /**
  * @swagger
@@ -74,4 +76,18 @@ export function getAdmin(req: IRequest) {
 export function postAdmin(req: IRequest<BodyType>) {
     const { name, email } = req.body;
     return { admin: { name, email } };
+}
+
+export async function createSellerAccount(req: IRequest<SellerDTO>) {
+    const userModel: SellerDTO = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: req.body.password,
+        balance: req.body.balance,
+        address: req.body.address,
+    };
+
+    //call providers to create seller account
+    return await createUser(userModel, Seller);
 }

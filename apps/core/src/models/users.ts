@@ -1,8 +1,8 @@
-import bcrypt from 'bcrypt';
-import { model, Schema, Types } from 'mongoose';
+import { model, Schema, Types } from "mongoose";
+import bcrypt from "bcrypt";
 
 export type TBuyer = {
-    id: Types.ObjectId;
+    _id?: Types.ObjectId;
     firstName: string;
     lastName: string;
     email: string;
@@ -20,7 +20,7 @@ export type TBuyer = {
             number: string;
             ccv: number;
         }
-    ];
+    ] | [];
     favorites: string[];
 };
 
@@ -35,7 +35,7 @@ const buyerSchema = new Schema<TBuyer>({
         street: { type: String, required: true },
         city: { type: String, required: true },
     },
-    role: { type: String, roles: 'buyer' },
+    role: { type: String, roles: "buyer" },
     creditCardInfo: [
         {
             name: { type: String },
@@ -44,18 +44,18 @@ const buyerSchema = new Schema<TBuyer>({
         },
     ],
     favorites: { type: [String] },
-});
+}, { versionKey: false });
 
-buyerSchema.pre<TBuyer>('save', async function (next) {
+buyerSchema.pre<TBuyer>("save", async function (next) {
     const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
     next();
 });
 
-export const Buyer = model<TBuyer>('Buyer', buyerSchema, 'users');
+export const Buyer = model<TBuyer>("Buyer", buyerSchema, "users");
 
 export type TSeller = {
-    id: Types.ObjectId;
+    _id: Types.ObjectId;
     firstName: string;
     lastName: string;
     email: string;
@@ -73,6 +73,7 @@ export type TSeller = {
 };
 
 const sellerSchema = new Schema<TSeller>({
+    // _id: { type: Schema.Types.ObjectId },
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     email: { type: String, required: true },

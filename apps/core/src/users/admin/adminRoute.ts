@@ -1,10 +1,11 @@
 import * as adminController from './adminController';
 import { Route } from '../../types';
 import { z } from 'zod';
+import { sellerBody } from './adminSchema';
 
 const body = z.object({
     name: z.string(),
-    email: z.string()
+    email: z.string(),
 });
 
 //example of a route using all the middleware fields
@@ -14,8 +15,8 @@ const getAdmin: Route = {
     // role: 'admin',
     // auth: true,
     middleware: [],
-    controller: adminController.getAdmin
-}
+    controller: adminController.getAdmin,
+};
 
 const postAdmin: Route = {
     route: '/admin',
@@ -24,9 +25,19 @@ const postAdmin: Route = {
     body,
     // auth: true,
     middleware: [],
-    controller: adminController.postAdmin
-}
+    controller: adminController.postAdmin,
+};
+
+const createSellerAccount: Route = {
+    route: '/admin/create-seller-account',
+    method: 'POST',
+    role: 'admin',
+    body: sellerBody,
+    auth: true,
+    middleware: [],
+    controller: adminController.createSellerAccount,
+};
 
 export const adminRoutes = () => {
-    return [getAdmin, postAdmin]
-}
+    return [getAdmin, postAdmin, createSellerAccount];
+};
