@@ -1,6 +1,7 @@
 import { APIError } from '@e-comms/shared/errors';
 import express, { NextFunction, Request, Response } from 'express';
 import { AsyncRouter } from 'express-async-router';
+import rateLimit from 'express-rate-limit';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { databaseConnection } from './database/databaseSetup';
@@ -14,7 +15,6 @@ import { validateSchema } from './users/middleware/validateSchema';
 import { sellersRoutes } from './users/seller/sellerRoute';
 import envResult from './utils/env';
 import './utils/logger';
-
 
 await databaseConnection();
 
@@ -41,7 +41,17 @@ const options = {
 
 const specs = swaggerJSDoc(options);
 const app = express();
+const limiter = rateLimit({
+    windowMs: envResult.WINDOW_MS,
+    max: envResult.MAX_REQUEST,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: 'Too many request!',
+});
+app.post('/login', limiter);
+app.post('/register', limiter);
 app.use(express.json());
+
 const router = AsyncRouter({
     sender: (req: Request, res: Response, value: string) => {
         res.send(value ?? { success: true });

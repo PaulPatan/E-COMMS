@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "description": "Load balancer for the e-commerce application",
   "main": "index.js",
-  "devDependencies": {},
+  "type": "module",
   "scripts": {
-    "start": "echo 'Starting lb backend...'",
+    "start": "nodemon -L --exec ts-node-transpile-only -r dotenv/config ./src/index.ts",
     "test": "jest --passWithNoTests",
-    "lint": "eslint ./src/**/*.ts" 
+    "lint": "eslint ./src/**/*.ts"
   },
   "keywords": [
     "lb",
@@ -15,5 +15,11 @@
     "rate-limit"
   ],
   "author": "Crimson Crusaders",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "round-robin-js": "^3.0.5",
+    "zod": "^3.21.4"
+  }
 }

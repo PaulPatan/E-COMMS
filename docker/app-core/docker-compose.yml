@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  app_core_instance1:
+    image: node-app-core
+    container_name: app_core_instance1
+    network_mode: "host"
+    build:
+      context: ../../
+      dockerfile: dockerfile-app-core
+    env_file:
+      ../../apps/core/.env
+    environment:
+      - PORT=5001
+  app_core_instance2:
+    image: node-app-core
+    container_name: app_core_instance2
+    network_mode: "host"
+    build:
+      context: ../../
+      dockerfile: dockerfile-app-core
+    env_file:
+      ../../apps/core/.env
+    environment:
+      - PORT=5002
+  app_core_instance3:
+    image: node-app-core
+    container_name: app_core_instance3
+    network_mode: "host"
+    build:
+      context: ../../
+      dockerfile: dockerfile-app-core
+    env_file:
+      ../../apps/core/.env
+    environment:
+      - PORT=5003
