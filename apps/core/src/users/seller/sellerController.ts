@@ -1,4 +1,6 @@
-import { IRequest, SellerDTO } from '../../types';
+import { IRequest, Invoice, SellerDTO } from '../../types';
+import { getBuyerById } from '../buyer/buyerService';
+// import { generateInvoice } from './sellerProvider';
 import * as service from './sellerService';
 
 export const getSellers = async () => {
@@ -21,4 +23,26 @@ export const putSellerById = async (req: IRequest<SellerDTO>) => {
     const seller = req.body;
     await service.putSellerById(id, seller);
     return { msg: 'Seller updated successfully' };
-}
+};
+
+export const sendInvoiceEmail = async (req: IRequest) => {
+    const id = req.params.clientId;
+    const buyer = await getBuyerById(id);
+    // const invoice = await generateInvoice(id);
+    const invoice: Invoice = {
+        id: '1',
+        items: [
+            {
+                description: 'item 1',
+                price: 100,
+            },
+            {
+                description: 'item 2',
+                price: 200,
+            }
+        ],
+        total: 300,
+    };
+    await service.sendInvoiceEmail(buyer.email, invoice);
+    return { msg: 'Invoice sent successfully' };
+};

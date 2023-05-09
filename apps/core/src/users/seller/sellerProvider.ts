@@ -12,3 +12,9 @@ export const getSelleryById = async(id: string) => {
     }
     return entity;
 }
+
+export const generateInvoice = async (id: string) => {
+    // const seller = await getSelleryById(id);
+    console.log(`Seller id: ${id} `);
+    // return invoice;
+}

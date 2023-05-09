@@ -38,4 +38,4 @@ export const putBuyerById = async (id: string, buyer: any) => {
     };
     await checkMongoIdByFilterAndReturnObject(filter, Buyer, 'Buyer');
     await Buyer.updateOne({ _id: new mongoose.Types.ObjectId(id) }, buyer);
-}
+};

@@ -1,8 +1,12 @@
+import { APIError } from '@e-comms/shared/errors';
+import ejs from 'ejs';
 import mongoose from 'mongoose';
+import nodemailer from 'nodemailer';
 import { mapSellerModelToDto } from '../../mapper/userMapper';
 import { Seller } from '../../models/users';
-import { Filter } from '../../types';
+import { Filter, Invoice } from '../../types';
 import { checkMongoIdByFilterAndReturnObject } from '../../utils/check';
+import Env from '../../utils/env';
 
 export const getSellers = async () => {
     const sellers = await Seller.find({ role: 'seller' }, {});
@@ -38,4 +42,32 @@ export const putSellerById = async (id: string, seller: any) => {
     };
     await checkMongoIdByFilterAndReturnObject(filter, Seller, 'Seller');
     await Seller.updateOne({ _id: new mongoose.Types.ObjectId(id) }, seller);
-}
+};
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: `${Env.GMAIL}`,
+        pass: `${Env.GMAIL_PASS}`,
+    },
+});
+
+export const sendInvoiceEmail = async (to: string, invoice: Invoice) => {
+    const html = await ejs.renderFile('./src/utils/invoice.ejs', { invoice });
+    const mailOptions = {
+        from: Env.EMAIL_SENDER,
+        to,
+        subject: 'Invoice',
+        html,
+    };
+    await transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            throw new APIError(500, {
+                message: `Error sending email: ${error}`,
+            });
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+};

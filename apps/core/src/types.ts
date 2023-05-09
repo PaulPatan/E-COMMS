@@ -69,3 +69,12 @@ export type IRequest<Req = unknown, Res = unknown> = Request<
     Res,
     Req
 >;
+
+export type Invoice = {
+    id: string;
+    items: {
+        description: string;
+        price: number;
+    }[];
+    total: number;
+};

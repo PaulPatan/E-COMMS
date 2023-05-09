@@ -1,3 +1,4 @@
+import { APIError } from '@e-comms/shared/errors';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { Buyer } from '../../models/users';
@@ -21,15 +22,16 @@ passport.use(
                     lastName: req.body.lastName,
                     address: req.body.address,
                 };
-
                 const userExists = await getUserByEmail(email);
 
                 if (userExists) {
-                    return done(null, false, {
-                        message: 'User already exists',
-                    });
+                    return done(
+                        new APIError(403, {
+                            msg: 'User already exits, please login!',
+                        }),
+                        false
+                    );
                 }
-
                 const buyer = await createUser(userModel, Buyer);
 
                 return done(null, buyer);

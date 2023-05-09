@@ -35,7 +35,7 @@ const buyerSchema = new Schema<TBuyer>({
         street: { type: String, required: true },
         city: { type: String, required: true },
     },
-    role: { type: String, roles: "buyer" },
+    role: { type: String, default: "buyer" },
     creditCardInfo: [
         {
             name: { type: String },
@@ -79,7 +79,7 @@ const sellerSchema = new Schema<TSeller>({
     email: { type: String, required: true },
     password: { type: String, required: true },
     passwordSalt: { type: String, required: true },
-    role: { type: String, roles: 'seller', required: true },
+    role: { type: String, default: 'seller', required: true },
     balance: { type: Number },
     creditCardInfo: [
         {
@@ -108,7 +108,7 @@ const adminSchema = new Schema<TAdmin>({
     email: { type: String, required: true },
     password: { type: String, required: true },
     passwordSalt: { type: String, required: true },
-    role: { type: String, roles: 'admin', required: true },
+    role: { type: String, default: 'admin', required: true },
 });
 
 export const Admin = model<TAdmin>('Admin', adminSchema, 'users');

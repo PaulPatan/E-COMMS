@@ -171,6 +171,15 @@ const deleteSeller: Route = {
     controller: sellerController.deleteSellerById,
 };
 
+const postSeller: Route = {
+    route: '/seller',
+    method: 'POST',
+    role: 'seller',
+    auth: true,
+    middleware: [],
+    controller: sellerController.deleteSellerById,
+};
+
 const putSellerById: Route = {
     route: '/seller/:id',
     method: 'PUT',
@@ -180,6 +189,55 @@ const putSellerById: Route = {
     controller: sellerController.putSellerById,
 };
 
+/**
+ * @swagger
+ * /seller/{clientId}/invoice:
+ *   post:
+ *     summary: Send invoice email to the client
+ *     tags: [Seller]
+ *     parameters:
+ *       - in: path
+ *         name: clientId
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Client id
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             properties:
+ *               invoiceId:
+ *                 type: string
+ *                 description: The invoice id
+ *             example:
+ *               invoiceId: 1234
+ *     responses:
+ *       200:
+ *         description: The invoice was sent
+ *       404:
+ *         description: The client was not found
+ *       500:
+ *         description: Some error happened
+ */
+
+const sendInvoiceEmail: Route = {
+    route: '/seller/:clientId/invoice',
+    method: 'POST',
+    // role: 'seller',
+    // auth: true,
+    middleware: [],
+    controller: sellerController.sendInvoiceEmail,
+};
+
 export const sellersRoutes = () => {
-    return [getSeller, getSellers, deleteSeller, putSellerById];
+    return [
+        getSeller,
+        postSeller,
+        getSellers,
+        deleteSeller,
+        putSellerById,
+        sendInvoiceEmail,
+    ];
 };
