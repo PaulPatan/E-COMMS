@@ -48,6 +48,7 @@ export const schema = z.object({
             return z.NEVER;
         }),
     MONGO_URI: z.string().nonempty(),
+    RESOURCE_HOST: z.string(),
     MAX_REQUEST: z
         .string()
         .optional()

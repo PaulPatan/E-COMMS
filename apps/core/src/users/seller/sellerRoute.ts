@@ -105,7 +105,7 @@ const getSellers: Route = {
  */
 
 const getSeller: Route = {
-    route: '/seller/:id',
+    route: '/sellers/:id',
     method: 'GET',
     role: 'seller',
     auth: true,
@@ -163,7 +163,7 @@ const getSeller: Route = {
  */
 
 const deleteSeller: Route = {
-    route: '/seller/:id',
+    route: '/sellers/:id',
     method: 'DELETE',
     role: 'seller',
     auth: true,
@@ -181,7 +181,7 @@ const postSeller: Route = {
 };
 
 const putSellerById: Route = {
-    route: '/seller/:id',
+    route: '/sellers/:id',
     method: 'PUT',
     role: 'seller',
     auth: true,

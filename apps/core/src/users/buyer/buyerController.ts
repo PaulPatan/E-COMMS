@@ -1,7 +1,9 @@
-import * as service from './buyerService';
 import jwt from 'jsonwebtoken';
+import { Buyer } from '../../models/users';
+import { BuyerDTO, IRequest, RegisterDTO } from '../../types';
 import envResult from '../../utils/env';
-import { BuyerDTO, IRequest } from '../../types';
+import { createUser } from '../userProvider';
+import * as service from './buyerService';
 
 export const getBuyers = async () => {
     return await service.getBuyers();
@@ -18,8 +20,17 @@ export async function deleteBuyerById(req: IRequest) {
     return { msg: 'Buyer deleted successfully' };
 }
 
-export function loginBuyer(req: IRequest) {
-    const body = { _id: req.user?.id, role: req.user?.role };
+export async function loginBuyer(req: IRequest<RegisterDTO>) {
+    const userModel = {
+        email: req.body.email,
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        address: req.body.address,
+    };
+    const buyer = await createUser(userModel, Buyer);
+    const body = { _id: buyer.id, role: buyer.role };
+
     const token = jwt.sign({ user: body }, envResult.JWT_SECRET);
     return { token: `Bearer ${token}` };
 }
@@ -29,4 +40,4 @@ export const putBuyerById = async (req: IRequest<BuyerDTO>) => {
     const buyer = req.body;
     await service.putBuyerById(id, buyer);
     return { msg: 'Buyer updated successfully' };
-}
+};

@@ -13,7 +13,6 @@ export const mapProductDtoToModel = (dto: ProductPost): TProduct => {
         quantity: dto.quantity,
         description: dto.description,
         discountPercentage: dto.discountPercentage,
-        image: [],
         recommended: true,
         reviews: [],
     }
@@ -31,7 +30,7 @@ export const mapProductModelToDto = async (model: TProduct): Promise<ProductDto>
         quantity: model.quantity,
         description: model.description,
         discountPercentage: model.discountPercentage,
-        image: model.image,
+        image: [],
         recommended: model.recommended,
         reviews: model.reviews,
     }

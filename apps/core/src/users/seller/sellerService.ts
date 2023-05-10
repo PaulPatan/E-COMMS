@@ -10,7 +10,27 @@ import Env from '../../utils/env';
 
 export const getSellers = async () => {
     const sellers = await Seller.find({ role: 'seller' }, {});
-    return sellers.map((seller) => mapSellerModelToDto(seller));
+    const dtos = sellers.map((seller) => mapSellerModelToDto(seller));
+    const responses = await Promise.all(
+        dtos.map((dto) => {
+            return fetch(`${Env.RESOURCE_HOST}/avatar/${dto._id}`, {
+                method: 'GET',
+            });
+        })
+    );
+    const images = await Promise.all(
+        responses.map((res) => {
+            return res.json();
+        })
+    );
+    dtos.forEach((dto, index) => {
+        if (responses[index].status < 400) {
+            dto.avatar = images[index].avatar;
+        } else {
+            dto.avatar = '';
+        }
+    });
+    return dtos;
 };
 
 export const getSellerById = async (id: string) => {
@@ -23,7 +43,13 @@ export const getSellerById = async (id: string) => {
         Seller,
         'Seller'
     );
-    return mapSellerModelToDto(seller);
+    const dto = mapSellerModelToDto(seller);
+    const res = await fetch(`${Env.RESOURCE_HOST}/avatar/${dto._id}`, {
+        method: 'GET',
+    });
+    const data = await res.json();
+    dto.avatar = data.avatar;
+    return dto;
 };
 
 export const deleteSellerById = async (id: string) => {
@@ -33,6 +59,9 @@ export const deleteSellerById = async (id: string) => {
     };
     await checkMongoIdByFilterAndReturnObject(filter, Seller, 'Seller');
     await Seller.deleteOne({ _id: new mongoose.Types.ObjectId(id) });
+    await fetch(`${Env.RESOURCE_HOST}/avatar/${id}`, {
+        method: 'DELETE',
+    });
 };
 
 export const putSellerById = async (id: string, seller: any) => {
@@ -42,6 +71,16 @@ export const putSellerById = async (id: string, seller: any) => {
     };
     await checkMongoIdByFilterAndReturnObject(filter, Seller, 'Seller');
     await Seller.updateOne({ _id: new mongoose.Types.ObjectId(id) }, seller);
+    const res = await fetch(`${Env.RESOURCE_HOST}/avatar/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ image: seller.avatar }),
+    });
+    if (res.status === 400) {
+        throw new APIError(400, { error: `Wrong base64 format for images!` });
+    }
 };
 
 const transporter = nodemailer.createTransport({

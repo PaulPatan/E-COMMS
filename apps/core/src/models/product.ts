@@ -8,7 +8,6 @@ export type TProduct = {
     quantity: number;
     description: string;
     discountPercentage: number;
-    image: string[]; //path
     recommended: boolean;
     reviews: string[];
 };
@@ -21,10 +20,8 @@ export const productSchema = new Schema<TProduct>({
     quantity: { type: Number },
     description: { type: String },
     discountPercentage: { type: Number },
-    image: { type: [String] }, //path
     recommended: { type: Boolean },
     reviews: { type: [String] },
 }, { versionKey: false });
 
-//productSchema.index({name: 'text'});
 export const Product = model<TProduct>("products", productSchema);

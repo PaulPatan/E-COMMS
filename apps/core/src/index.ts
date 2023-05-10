@@ -2,6 +2,7 @@ import { APIError } from '@e-comms/shared/errors';
 import express, { NextFunction, Request, Response } from 'express';
 import { AsyncRouter } from 'express-async-router';
 import rateLimit from 'express-rate-limit';
+import mongoose from 'mongoose';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
 import { databaseConnection } from './database/databaseSetup';
@@ -109,6 +110,9 @@ app.use(
 app.use(ROUTES);
 
 app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    if (err instanceof mongoose.Error.ValidationError) {
+        return res.status(400).send((err as any).errors);
+    }
     if (err instanceof APIError) {
         const { errorCode, data } = err;
         res.status(errorCode).send({ message: data });
@@ -119,6 +123,9 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
         return;
     }
     console.log('Catastrophic error happened!\n', err);
+
+    // * Worst case return any error
+    return res.status(500).send(err);
 });
 
 app.listen(envResult.PORT, () => {

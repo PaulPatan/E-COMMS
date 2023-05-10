@@ -1,82 +1,42 @@
 [
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5b" },
-        "title": "Electronics"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5d" },
-        "title": "Shoes"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a5f" },
-        "title": "Movies"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a61" },
-        "title": "Outdoors"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a63" },
-        "title": "Baby"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a65" },
-        "title": "Shoes"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a67" },
-        "title": "Kids"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a69" },
-        "title": "Games"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6b" },
-        "title": "Beauty"
-    },
-    {
-        "_id": { "$oid": "6450cd9d2d50e1fdb4196a6d" },
-        "title": "Garden"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d121f" },
-        "title": "Baby"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d1221" },
-        "title": "Computers"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d1223" },
-        "title": "Kids"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d1225" },
-        "title": "Garden"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d1227" },
-        "title": "Games"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d1229" },
-        "title": "Toys"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d122b" },
-        "title": "Toys"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d122d" },
-        "title": "Toys"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d122f" },
-        "title": "Jewelery"
-    },
-    {
-        "_id": { "$oid": "644c145b8312ab67fd0d1231" },
-        "title": "Games"
-    }
-]
+        {
+                "_id": { "$oid": "645b57e1c8983e1f592496fb" },
+                "title": "Outdoors"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f592496fe" },
+                "title": "Home"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f59249701" },
+                "title": "Jewelery"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f59249704" },
+                "title": "Games"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f59249707" },
+                "title": "Tools"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f5924970a" },
+                "title": "Movies"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f5924970d" },
+                "title": "Beauty"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f59249710" },
+                "title": "Home"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f59249713" },
+                "title": "Games"
+        },
+        {
+                "_id": { "$oid": "645b57e1c8983e1f59249716" },
+                "title": "Automotive"
+        }
+    ]

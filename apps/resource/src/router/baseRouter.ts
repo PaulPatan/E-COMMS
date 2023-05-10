@@ -1,6 +1,6 @@
-import { Router } from "express";
-import avatarRouter from "./avatarRouter";
-import imageRouter from "./productImageRouter"
+import { Router } from 'express';
+import avatarRouter from './avatarRouter';
+import imageRouter from './productImageRouter';
 
 const router: Router = Router();
 

@@ -347,7 +347,7 @@ const registerBuyer: Route = {
  */
 
 const putBuyerById: Route = {
-    route: '/buyer/:id',
+    route: '/buyers/:id',
     method: 'PUT',
     auth: false,
     middleware: [],

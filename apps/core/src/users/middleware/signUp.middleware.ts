@@ -1,9 +1,8 @@
 import { APIError } from '@e-comms/shared/errors';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { Buyer } from '../../models/users';
 import { IRequest, RegisterDTO } from '../../types';
-import { createUser, getUserByEmail } from '../userProvider';
+import { getUserByEmail } from '../userProvider';
 
 passport.use(
     'signup',
@@ -32,9 +31,8 @@ passport.use(
                         false
                     );
                 }
-                const buyer = await createUser(userModel, Buyer);
 
-                return done(null, buyer);
+                return done(null, userModel);
             } catch (error) {
                 done(error);
             }

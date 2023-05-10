@@ -1,10 +1,15 @@
-import { Router } from "express";
-import { deleteProductImage, getProductImage, saveOrUpdateProductImage } from "../controller/productImageController";
+import { Router } from 'express';
+import {
+    deleteProductImage,
+    getProductImages,
+    saveOrUpdateProductImage,
+} from '../controller/productImageController';
 
 const router: Router = Router();
 
-router.route('/:id')
-    .get(getProductImage)
+router
+    .route('/:id')
+    .get(getProductImages)
     .put(saveOrUpdateProductImage)
     .delete(deleteProductImage);
 

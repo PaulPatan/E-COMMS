@@ -1,4 +1,4 @@
-import { IRequest, Invoice, SellerDTO } from '../../types';
+import { Invoice, IRequest, SellerDTO } from '../../types';
 import { getBuyerById } from '../buyer/buyerService';
 // import { generateInvoice } from './sellerProvider';
 import * as service from './sellerService';

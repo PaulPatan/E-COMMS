@@ -1,7 +1,12 @@
 export type Params = {
-    id: string
+    id: string;
 };
 
 export type Body = {
-    image: string
+    image: string;
+};
+
+export type Images = {
+    id: string;
+    data: string;
 };
