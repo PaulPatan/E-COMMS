@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # E-COMMS
-Practica
 =======
 # E-Commerce platform project
 
@@ -15,4 +13,3 @@ The repository comes preconfigured with a CI configuration that runs Jest on mer
 The repository also comes preconfigured with debug configurations for each backend service (lb, core and resource) to make running services and debugging easier
 
 To see a list of recommended VSCode extensions you can look at .vscode/extensions.json and make changes as desired
->>>>>>> master
