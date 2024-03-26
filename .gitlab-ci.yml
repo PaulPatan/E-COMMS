@@ -1,0 +1,9 @@
+include:
+  - /.ci/stages/prepare.yml
+  - /.ci/stages/test.yml
+
+stages:
+  - prepare
+  - test
+
+

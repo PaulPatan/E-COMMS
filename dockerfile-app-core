@@ -1,0 +1,9 @@
+FROM node:lts-alpine
+WORKDIR /app
+COPY ./tsconfig.json .
+COPY ./nx.json .
+COPY ./package.json .
+COPY ./apps/core/ ./apps/core
+COPY ./packages/ ./packages
+RUN npm i
+CMD ["npm", "start", "-w", "@e-comms/core"]

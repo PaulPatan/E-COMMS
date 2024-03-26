@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+
+    <style>
+        /* Styles for the invoice table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Styles for the invoice totals */
+        .totals {
+            margin-top: 16px;
+            padding: 8px;
+            background-color: #f2f2f2;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Invoice #<%= invoice.id %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% invoice.items.forEach(item => { %>
+            <tr>
+                <td><%= item.description %></td>
+                <td><%= item.price %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <div class="totals">
+        Total: <%= invoice.total %>
+    </div>
+</body>
+
+</html>

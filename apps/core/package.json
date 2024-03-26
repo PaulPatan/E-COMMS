@@ -1,0 +1,35 @@
+{
+  "name": "@e-comms/core",
+  "version": "0.0.1",
+  "description": "E-Commerce application backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon -L --exec ts-node-transpile-only -r dotenv/config ./src/index.ts",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint ./src/**/*.ts",
+    "check": "tsc --noEmit --skipLibCheck"
+  },
+  "dependencies": {
+    "@e-comms/shared": "*",
+    "bcrypt": "^5.1.0",
+    "express-rate-limit": "^6.7.0",
+    "mongoose": "^7.0.5",
+    "password-validator": "^5.3.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
+    "eslint": "^8.38.0"
+  },
+  "keywords": [
+    "e-commerce",
+    "api",
+    "oauth",
+    "shop"
+  ],
+  "author": "Crimson Crusaders",
+  "license": "ISC"
+}

@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    // Recommended/Required
+    "nrwl.angular-console",
+    "usernamehw.errorlens",
+    "ms-azuretools.vscode-docker",
+    "shardulm94.trailing-spaces",
+    "rvest.vs-code-prettier-eslint",
+    "esbenp.prettier-vscode"
+    // Useful
+    // "aaron-bond.better-comments",
+    // "mhutchie.git-graph",
+    // Styling
+    // PKief.material-icon-theme
+    // teabyii.ayu
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@e-comms/lb",
+  "version": "0.0.1",
+  "description": "Load balancer for the e-commerce application",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon -L --exec ts-node-transpile-only -r dotenv/config ./src/index.ts",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint ./src/**/*.ts"
+  },
+  "keywords": [
+    "lb",
+    "proxy",
+    "rate-limit"
+  ],
+  "author": "Crimson Crusaders",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "round-robin-js": "^3.0.5",
+    "zod": "^3.21.4"
+  }
+}
